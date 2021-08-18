@@ -19,8 +19,8 @@ public class AndroidFragment extends Fragment {
     EditText mEdt;
     Button mBtn;
     TextView mTv;
-
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,12 +34,17 @@ public class AndroidFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//
+//        if(getArguments() != null){
+//            Bundle bundle = getArguments();
+//            String chuoi = bundle.getString("string");
+//            mTv.setText(chuoi);
+//        }
 
-        if(getArguments() != null){
-            Bundle bundle = getArguments();
-            String chuoi = bundle.getString("string");
-            mTv.setText(chuoi);
-        }
+    }
 
+    public void putArgument(Bundle bundle){
+        String name = bundle.getString("name");
+        mTv.setText(name);
     }
 }
